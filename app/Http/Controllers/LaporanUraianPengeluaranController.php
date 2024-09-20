@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KlasifikasiUraianPendapatan;
-use App\Models\TransaksiPendapatan;
+use App\Models\KlasifikasiUraianPengeluaran;
+use App\Models\TransaksiPengeluaran;
 use Illuminate\Http\Request;
 
-class LaporanUraianController extends Controller
+class LaporanUraianPengeluaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $klasifikasi_uraian_pendapatan = KlasifikasiUraianPendapatan::all();
-        return view('page.laporan_uraian.index')->with([
-            'klasifikasi_uraian_pendapatan' => $klasifikasi_uraian_pendapatan,
+        $klasifikasi_uraian_pengeluaran = KlasifikasiUraianPengeluaran::all();
+        return view('page.laporan_uraian_pengeluaran.index')->with([
+            'klasifikasi_uraian_pengeluaran' => $klasifikasi_uraian_pengeluaran,
         ]);
     }
 
@@ -28,11 +28,11 @@ class LaporanUraianController extends Controller
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
 
-        $pendapatan = TransaksiPendapatan::whereBetween('tanggal_pendapatan', [$start_date, $end_date])->where('id_uraian_pendapatan', $uraian)->get();
+        $pengeluaran = TransaksiPengeluaran::whereBetween('tanggal_pengeluaran', [$start_date, $end_date])->where('id_uraian_pengeluaran', $uraian)->get();
 
-        // dd($pendapatan);
-        return view('page.laporan_uraian.read')->with([
-            'pendapatan' => $pendapatan,
+        // dd($pengeluaran);
+        return view('page.laporan_uraian_pengeluaran.read')->with([
+            'pengeluaran' => $pengeluaran,
         ]);
     }
 

@@ -118,9 +118,13 @@
                                 {{ __('Laporan Harian') }}
                             </x-dropdown-link>
 
-                            {{-- <x-dropdown-link :href="route('laporanUraian.index')">
-                                {{ __('Laporan Uraian') }}
-                            </x-dropdown-link> --}}
+                            <x-dropdown-link :href="route('laporanUraian.index')">
+                                {{ __('Laporan Uraian Pendapatan') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('laporanUraianPengeluaran.index')">
+                                {{ __('Laporan Uraian Pengeluaran') }}
+                            </x-dropdown-link>
 
                         </x-slot>
                     </x-dropdown>

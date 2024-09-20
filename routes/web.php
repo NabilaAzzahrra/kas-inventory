@@ -4,6 +4,8 @@ use App\Http\Controllers\KlasifikasiPendapatanController;
 use App\Http\Controllers\KlasifikasiUraianPendapatanController;
 use App\Http\Controllers\KlasifikasiUraianPengeluaranController;
 use App\Http\Controllers\LaporanHarianController;
+use App\Http\Controllers\LaporanUraianController;
+use App\Http\Controllers\LaporanUraianPengeluaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TambahanKasController;
 use App\Http\Controllers\TransaksiPendapatanController;
@@ -18,6 +20,8 @@ Route::resource('transaksi_pendapatan', TransaksiPendapatanController::class)->m
 Route::resource('transaksi_pengeluaran', TransaksiPengeluaranController::class)->middleware('auth');
 Route::resource('klasifikasiPendapatan', KlasifikasiPendapatanController::class)->middleware('auth');
 Route::resource('laporanHarian', LaporanHarianController::class)->middleware('auth');
+Route::resource('laporanUraian', LaporanUraianController::class)->middleware('auth');
+Route::resource('laporanUraianPengeluaran', LaporanUraianPengeluaranController::class)->middleware('auth');
 Route::resource('tambahanKas', TambahanKasController::class)->middleware('auth');
 Route::resource('MasterKlasifikasiPendapatan', KlasifikasiPendapatanController::class)->middleware('auth');
 Route::resource('KlasifikasiUraianPendapatan', KlasifikasiUraianPendapatanController::class)->middleware('auth');
